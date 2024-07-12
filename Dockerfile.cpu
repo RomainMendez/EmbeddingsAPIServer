@@ -10,6 +10,6 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 # Define environment variable
-ENV MODE cpu
+ENV MODE=cpu
 
 CMD ["python", "src/run.py"]

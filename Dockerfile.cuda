@@ -2,7 +2,7 @@ FROM nvidia/cuda:12.1.1-runtime-ubuntu20.04
 
 # Install Python
 RUN apt-get update && \
-    apt-get install -y python3-pip python3.11 && \
+    apt-get install -y python3-pip python3-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
@@ -18,7 +18,7 @@ RUN pip3 install -r requirements.txt
 EXPOSE 8000
 
 # Define environment variable
-ENV MODE cuda
+ENV MODE=cuda
 
 
 CMD ["python", "src/run.py"]
