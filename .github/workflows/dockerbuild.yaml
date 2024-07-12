@@ -24,6 +24,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          logout: false
       
       - name: Build and push Docker image (CPU)
         uses: docker/build-push-action@v6
@@ -32,6 +33,7 @@ jobs:
           file: ./Dockerfile.cpu
           push: true
           tags: romainmendez/embeddingsapiserver:latest-cpu
+          registry: ghcr.io
 
   build-and-push-cuda:
     runs-on: ubuntu-latest
@@ -49,6 +51,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          logout: false
       
       - name: Build and push Docker image (CUDA)
         uses: docker/build-push-action@v6
@@ -57,4 +60,5 @@ jobs:
           file: ./Dockerfile.cuda
           push: true
           tags: ghcr.io/romainmendez/embeddingsapiserver:latest-cuda
+          registry: ghcr.io
           
