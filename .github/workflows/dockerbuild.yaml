@@ -32,7 +32,7 @@ jobs:
           context: .
           file: ./Dockerfile.cpu
           push: true
-          tags: romainmendez/embeddingsapiserver:latest-cpu
+          tags: ghcr.io/romainmendez/embeddingsapiserver:latest-cpu
           registry: ghcr.io
 
   build-and-push-cuda:
