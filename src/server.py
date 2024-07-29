@@ -24,7 +24,7 @@ else:
 
 logging.debug("Loading the model !")
 from sentence_transformers import SentenceTransformer
-model = SentenceTransformer(model_name, device=mode, local_only=True)
+model = SentenceTransformer(model_name, device=mode, local_files_only=True)
 logging.debug("Done !")
 
 app = FastAPI()
